@@ -53,9 +53,31 @@
 
     }
 
+    &__finish {
+
+      display: none;
+
+      &--started {
+        display: block;
+      }
+
+      .text {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+
   }
 
   .question {
+
+    display: none;
+
+    &--current {
+      display: block;
+    }
 
     &__text {
       font-weight: 600;
