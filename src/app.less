@@ -1,5 +1,8 @@
 .ikra-app {
 
+
+
+
   font-family: Arial, SansSerif;
   font-size: 14px;
   line-height: 1.2;
@@ -23,15 +26,10 @@
 
     &__intro {
 
-      &--ready {
+      &--leave {
 
-        display: block;
-
-      }
-
-      &--started {
-
-        display: none;
+        transition: opacity ease .5s;
+        opacity: 0;
 
       }
 
@@ -73,10 +71,12 @@
 
   .question {
 
-    display: none;
+    transition: all ease .5s;
+    opacity: 1;
 
-    &--current {
-      display: block;
+    &--leave {
+
+      opacity: 0 !important;
     }
 
     &__text {
@@ -88,3 +88,11 @@
 
 }
 
+.anim-appear {
+  opacity: 0;
+}
+
+.anim-appear.anim-appear-active {
+  opacity: 1;
+  transition: all ease 1s;
+}
