@@ -1,0 +1,95 @@
+.ikra-app {
+
+  font-family: Arial, SansSerif;
+  font-size: 14px;
+  line-height: 1.2;
+
+  &__header {
+
+
+  }
+
+  &__container {
+
+
+  }
+
+  &__footer {
+
+
+  }
+
+  .test {
+
+    &__intro {
+
+      &--leave {
+
+        transition: opacity ease .5s;
+        opacity: 0;
+
+      }
+
+    }
+
+    &__questions {
+
+      &--ready {
+
+        display:none;
+
+      }
+
+      &--started {
+
+        display: block;
+
+      }
+
+    }
+
+    &__finish {
+
+      display: none;
+
+      &--started {
+        display: block;
+      }
+
+      .text {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+  .question {
+
+    transition: all ease .5s;
+    opacity: 1;
+
+    &--leave {
+
+      opacity: 0 !important;
+    }
+
+    &__text {
+      font-weight: 600;
+    }
+  }
+
+
+
+}
+
+.anim-appear {
+  opacity: 0;
+}
+
+.anim-appear.anim-appear-active {
+  opacity: 1;
+  transition: all ease 1s;
+}
