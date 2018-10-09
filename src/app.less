@@ -1,36 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=cyrillic');
+
+@red: #ef4949;
+@orange: #f39022;
+@yellow: #ffc626;
+@green: #bac10c;
+@font: "Ubuntu", sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .ikra-app {
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  width: 100%;
+  min-height: 100vh;
 
-
-  font-family: Arial, SansSerif;
-  font-size: 14px;
+  font-family: @font;
+  font-size: 16px;
   line-height: 1.2;
 
-  &__header {
 
-
-  }
 
   &__container {
 
 
   }
 
-  &__footer {
-
-
-  }
 
   .test {
 
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+
     &__intro {
+
+      text-align: center;
+
+
+
+      &--ready {
+
+        .text {
+          p {
+            transition: all ease .5s;
+            opacity: 1 !important;
+          }
+        }
+
+        .action {
+
+          transition: all ease .8s;
+          transition-delay: 1s;
+
+          opacity: 1 !important;
+          top: 0 !important;
+        }
+
+      }
 
       &--leave {
 
         transition: opacity ease .5s;
-        opacity: 0;
+        opacity: 0  ;
 
+      }
+
+      .text {
+
+        p {
+
+          opacity: 0;
+
+          &:nth-child(1) {
+            transition-delay: .3s;
+          }
+          &:nth-child(2) {
+            transition-delay: .5s;
+          }
+          &:nth-child(3) {
+            transition-delay: .7s;
+          }
+          &:nth-child(4) {
+            transition-delay: .9s;
+          }
+        }
+      }
+
+      .action {
+        position: relative;
+        top: 50px;
+        opacity: 0;
+        margin-top: 30px;
       }
 
     }
@@ -72,27 +140,93 @@
   .question {
 
     transition: all ease .5s;
+    transition-delay: 1.5s;
     opacity: 1;
 
     &--leave {
-
       opacity: 0 !important;
+
+      .answer {
+        left: 50px;
+        opacity: 0;
+
+        &:nth-child(1), &:nth-child(3) {
+          left: 50px;
+        }
+
+        &:nth-child(2), &:nth-child(4) {
+          left: -50px;
+        }
+
+        &:nth-child(1) {
+          transition-delay: .2s;
+        }
+        &:nth-child(2) {
+          transition-delay: .4s;
+        }
+        &:nth-child(3) {
+          transition-delay: .6s;
+        }
+        &:nth-child(4) {
+          transition-delay: .8s;
+        }
+
+
+      }
     }
 
     &__text {
+      margin-bottom: 30px;
       font-weight: 600;
     }
   }
 
+  .answer {
+    position: relative;
+    left: 0;
+    opacity: 1;
+    margin: 15px 15px 0;
+    padding: 20px;
+    cursor: pointer;
+    border: 4px solid #ededed;
+
+    transition: all ease .3s;
+
+    &:hover {
+      border-color: @orange;
+    }
+
+    transform: skew(10deg);
+
+    &:nth-child(even) {
+      transform: skew(-10deg);
+      .text {
+        transform: skew(10deg);
+      }
+    }
+
+    .text {
+      display: block;
+      transform: skew(-10deg);
+    }
 
 
-}
+  }
 
-.anim-appear {
-  opacity: 0;
-}
+  // elements
 
-.anim-appear.anim-appear-active {
-  opacity: 1;
-  transition: all ease 1s;
+  button {
+    padding: 20px;
+    background: @red;
+    border: 4px solid @red;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: @font;
+    font-weight: 500;
+    line-height: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+  }
+
 }

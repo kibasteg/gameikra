@@ -4,7 +4,7 @@ class Answer extends React.Component {
 
     render () {
         return (
-            <div className="answer" onClick={() => {this.props.handleClick(this.props.answer.id)}}>{this.props.answer.text}</div>
+            <div className="answer" onClick={() => {this.props.handleClick(this.props.answer.id)}}><span class="text">{this.props.answer.text}</span></div>
         );
     }
 

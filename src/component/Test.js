@@ -22,6 +22,15 @@ class Test extends React.Component {
         };
     };
 
+    componentDidMount () {
+
+        setTimeout(() => {
+            this.setState({introClass: 'test__intro test__intro--ready'});
+        }, 500);
+
+
+    };
+
     handleStart = () => {
 
         console.log('handle start');
@@ -35,7 +44,7 @@ class Test extends React.Component {
 
             setTimeout(() => {
                 this.setState({questionClass:'question'})
-            }, 500);
+            }, 100);
 
         }, 500);
 
@@ -53,7 +62,7 @@ class Test extends React.Component {
                 questionClass: 'question'
             });
 
-        }, 500);
+        }, 1000);
 
         results[resultId]++;
 
